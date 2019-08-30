@@ -1,0 +1,895 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+<<<<<<< HEAD
+    <title>Transactions &#8212; ndau  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+=======
+    <title>Transactions - ndau API &#8212; ndau  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+>>>>>>> master
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+<<<<<<< HEAD
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The ndau API" href="api.html" />
+    <link rel="prev" title="User" href="user.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+=======
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="contents.html">ndau  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+>>>>>>> master
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+<<<<<<< HEAD
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="transactions">
+<h1>Transactions<a class="headerlink" href="#transactions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="addresses-and-accounts">
+<h2>Addresses and accounts<a class="headerlink" href="#addresses-and-accounts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="createchildaccount">
+<h3>CreateChildAccount()<a class="headerlink" href="#createchildaccount" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="delegate">
+<h3>Delegate()<a class="headerlink" href="#delegate" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="validation-rules">
+<h2>Validation rules<a class="headerlink" href="#validation-rules" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setvalidation">
+<h3>SetValidation()<a class="headerlink" href="#setvalidation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="changevalidation">
+<h3>ChangeValidation()<a class="headerlink" href="#changevalidation" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="transfers">
+<h2>Transfers<a class="headerlink" href="#transfers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="transfer">
+<h3>Transfer()<a class="headerlink" href="#transfer" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="transferandlock">
+<h3>TransferAndLock()<a class="headerlink" href="#transferandlock" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="changerecourseperiod">
+<h3>ChangeRecoursePeriod()<a class="headerlink" href="#changerecourseperiod" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="locking">
+<h2>Locking<a class="headerlink" href="#locking" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lock">
+<h3>Lock()<a class="headerlink" href="#lock" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="notify">
+<h3>Notify()<a class="headerlink" href="#notify" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="setrewardsdestination">
+<h3>SetRewardsDestination()<a class="headerlink" href="#setrewardsdestination" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="staking">
+<h2>Staking<a class="headerlink" href="#staking" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stake">
+<h3>Stake()<a class="headerlink" href="#stake" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="unstake">
+<h3>Unstake()<a class="headerlink" href="#unstake" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="setstakerules">
+<h3>SetStakeRules()<a class="headerlink" href="#setstakerules" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="node-operations">
+<h2>Node operations<a class="headerlink" href="#node-operations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="registernode">
+<h3>RegisterNode()<a class="headerlink" href="#registernode" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="unregisternode">
+<h3>UnregisterNode()<a class="headerlink" href="#unregisternode" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="crediteai">
+<h3>CreditEAI()<a class="headerlink" href="#crediteai" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="nominatenodereward">
+<h3>NominateNodeReward()<a class="headerlink" href="#nominatenodereward" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="claimnodereward">
+<h3>ClaimNodeReward()<a class="headerlink" href="#claimnodereward" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="monetary-policy">
+<h2>Monetary policy<a class="headerlink" href="#monetary-policy" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="releasefromendowment">
+<h3>ReleaseFromEndowment()<a class="headerlink" href="#releasefromendowment" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="issue">
+<h3>Issue()<a class="headerlink" href="#issue" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="recordprice">
+<h3>RecordPrice()<a class="headerlink" href="#recordprice" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="recordendowmentnav">
+<h3>RecordEndowmentNAV()<a class="headerlink" href="#recordendowmentnav" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="ndau-network-operations">
+<h2>ndau network operations<a class="headerlink" href="#ndau-network-operations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="commandvalidatorchange">
+<h3>CommandValidatorChange()<a class="headerlink" href="#commandvalidatorchange" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="setsysvar">
+<h3>SetSysvar()<a class="headerlink" href="#setsysvar" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="changeschema">
+<h3>ChangeSchema()<a class="headerlink" href="#changeschema" title="Permalink to this headline">¶</a></h3>
+=======
+          <div class="body" role="main">
+            
+  <div class="section" id="transactions-ndau-api">
+<h1>Transactions - ndau API<a class="headerlink" href="#transactions-ndau-api" title="Permalink to this headline">¶</a></h1>
+<p>Transactions are submitted to and retrieved from the ndau blockchain through the ndau API: all transaction input and output data is in JSON format. When a transaction is committed a unique transaction hash is generated for it, and that hash can be used to query the API for the details of that transaction.</p>
+<div class="section" id="data-types">
+<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td>A string</td>
+</tr>
+<tr>
+<td>int</td>
+<td>An integer (in base 10)</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>A period of time in microseconds (10<sup>-6</sup> seconds)</td>
+</tr>
+<tr>
+<td>napu</td>
+<td>A quantity of ndau in napu (10<sup>-8</sup> ndau)</td>
+</tr>
+<tr>
+<td>nanocent</td>
+<td>A quantity of USD in nanocents (10<sup>-11</sup> US Dollars)</td>
+</tr>
+<tr>
+<td>address</td>
+<td>An account address in ndau text format</td>
+</tr>
+<tr>
+<td>publickey</td>
+<td>A secp256k1 or ed25519 public key in ndau text format</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>A secp256k1 or ed25519 signature in ndau text format</td>
+</tr>
+</tbody>
+</table><p>Some JSON fields are <em>lists</em> of parameters and are indicated with a <code class="docutils literal notranslate"><span class="pre">[]</span></code> prefix (such as <code class="docutils literal notranslate"><span class="pre">[]signatures</span></code>). Fields specified as
+lists must always be represented as lists even if they hold only a single value. Multiple values in a list are separated by commas.</p>
+<p>To avoid rounding and precision errors created by different client environment, all ndau values are expressed as integers. There are never any floating point values in ndau transactions.</p>
+</div>
+<div class="section" id="submitting-transactions">
+<h2>Submitting transactions<a class="headerlink" href="#submitting-transactions" title="Permalink to this headline">¶</a></h2>
+<p>Each transaction is submitted in JSON format using the “json” fields shown below for each transaction. These names are longer and more descriptive than the compact format stored on the blockchain. Transactions may be prevalidated using the <code class="docutils literal notranslate"><span class="pre">/tx/prevalidate/:txname</span></code> endpoint before being submitted. Prevalidation ensures the transaction is valid and is properly signed, and it returns the transaction’s hash and any fees that will be charged for it when it is submitted. Any errors are indicated by an error code and a descriptive message. A valid transaction is submitted to the API with the <code class="docutils literal notranslate"><span class="pre">/tx/submit/:txname</span></code> endpoint.</p>
+</div>
+<div class="section" id="querying-transactions">
+<h2>Querying transactions<a class="headerlink" href="#querying-transactions" title="Permalink to this headline">¶</a></h2>
+<p>Transaction details can be retrieved by specifying the unique hash returned by the API when the transaction was submitted. Each transaction type returns a unique set of fields. In the descriptions below, the “msg” fields are the labels used for each field in the returned JSON. The transaction type is identified by the <code class="docutils literal notranslate"><span class="pre">TransactableID</span></code> field: these are the ID values associated with each transaction type.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="mi">1</span> <span class="n">Transfer</span>
+ <span class="mi">2</span> <span class="n">ChangeValidation</span>
+ <span class="mi">3</span> <span class="n">ReleaseFromEndowment</span>
+ <span class="mi">4</span> <span class="n">ChangeRecoursePeriod</span>
+ <span class="mi">5</span> <span class="n">Delegate</span>
+ <span class="mi">6</span> <span class="n">CreditEAI</span>
+ <span class="mi">7</span> <span class="n">Lock</span>
+ <span class="mi">8</span> <span class="n">Notify</span>
+ <span class="mi">9</span> <span class="n">SetRewardsDestination</span>
+<span class="mi">10</span> <span class="n">SetValidation</span>
+<span class="mi">11</span> <span class="n">Stake</span>
+<span class="mi">12</span> <span class="n">RegisterNode</span>
+<span class="mi">13</span> <span class="n">NominateNodeReward</span>
+<span class="mi">14</span> <span class="n">ClaimNodeReward</span>
+<span class="mi">15</span> <span class="n">TransferAndLock</span>
+<span class="mi">16</span> <span class="n">CommandValidatorChange</span>
+<span class="mi">18</span> <span class="n">UnregisterNode</span>
+<span class="mi">19</span> <span class="n">Unstake</span>
+<span class="mi">20</span> <span class="n">Issue</span>
+<span class="mi">21</span> <span class="n">CreateChildAccount</span>
+<span class="mi">22</span> <span class="n">RecordPrice</span>
+<span class="mi">23</span> <span class="n">SetSysvar</span>
+<span class="mi">24</span> <span class="n">SetStakeRules</span>
+<span class="mi">25</span> <span class="n">RecordEndowmentNAV</span>
+<span class="mi">26</span> <span class="n">ResolveStake</span>
+<span class="mi">30</span> <span class="n">ChangeSchema</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mainnet-and-testnet">
+<h1>Mainnet and Testnet<a class="headerlink" href="#mainnet-and-testnet" title="Permalink to this headline">¶</a></h1>
+<p>The ndau mainnet and testnet are accessible to the public. Each node on each network is identified with a unique numeric ID (given as 0 here):</p>
+<p>Mainnet: <a class="reference external" href="https://mainnet-0.ndau.tech:3030">https://mainnet-0.ndau.tech:3030</a> <br />Testnet: <a class="reference external" href="https://testnet-0.ndau.tech:3030">https://testnet-0.ndau.tech:3030</a></p>
+<p>The ndau API is available on all nodes in either network.</p>
+</div>
+<div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submittal">
+<h2>Submittal<a class="headerlink" href="#submittal" title="Permalink to this headline">¶</a></h2>
+<p>A transaction is submitted with an HTTP POST to <code class="docutils literal notranslate"><span class="pre">/tx/submit/:txtype</span></code> where <code class="docutils literal notranslate"><span class="pre">:txtype</span></code> is the name of the transaction type from the table above. The transaction JSON is submitted as described below. This example transfers 10 ndau from one account to another.
+URL: <code class="docutils literal notranslate"><span class="pre">https://mainnet-0.ndau.tech:3030/tx/submit/transfer</span></code></p>
+<p>JSON:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="s2">&quot;ndak9vpyz58fjpa4kg6gei3p9nch8jbf9iyszhg8mw8ump7q&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;destination&quot;</span><span class="p">:</span> <span class="s2">&quot;ndam5m7qpznkbczn8ewc39iqdd32gama785jkkrp3nxy9jre&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1000000000</span><span class="p">,</span>
+	<span class="s2">&quot;seq&quot;</span><span class="p">:</span> <span class="mi">203</span><span class="p">,</span>
+	<span class="s2">&quot;signatures&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ayjaftcggbcaeib6ehzcwu7t85svchaj5kp6xhu5vmhrky25z7jfcwni3thp2evrrebcaz3vv5pn5hwtm5puecfj6w5s74iy64mji4wmawzefwxp5qbew9yjs56aqieb&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Returns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;fee_napu&quot;</span><span class="p">:</span> <span class="mi">1000000</span><span class="p">,</span>
+	<span class="s2">&quot;sib_napu&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+	<span class="s2">&quot;err&quot;</span><span class="p">:</span> <span class="s2">&quot;Err and ErrCode are only set if an error occurred&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;hash&quot;</span><span class="p">:</span> <span class="s2">&quot;pAe0XAfcuiMwFlC4EQ8ftg&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;only set if additional information is available&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="query">
+<h2>Query<a class="headerlink" href="#query" title="Permalink to this headline">¶</a></h2>
+<p>A transaction query returns complete information about the transaction and information about the block on the ndau blockchain in which it is found. The transaction-specific information is in the <code class="docutils literal notranslate"><span class="pre">TransactableID</span></code> and <code class="docutils literal notranslate"><span class="pre">Transactable</span></code> fields.  For example, using the transaction hash returned from the above transfer submittal:</p>
+<p>URL: <code class="docutils literal notranslate"><span class="pre">https://mainnet-0.ndau.tech:3030/transaction/pAe0XAfcuiMwFlC4EQ8ftg</span></code></p>
+<p>Returns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;BlockHeight&quot;</span><span class="p">:</span> <span class="mi">13919</span><span class="p">,</span>
+  <span class="s2">&quot;TxOffset&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s2">&quot;Tx&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;Nonce&quot;</span><span class="p">:</span> <span class="s2">&quot;arqilpepEempMQJCrBEAAg==&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TransactableID&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;Transactable&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;src&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ndak9vpyz58fjpa4kg6gei3p9nch8jbf9iyszhg8mw8ump7q&quot;</span><span class="p">],</span>
+      <span class="s2">&quot;dst&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ndam5m7qpznkbczn8ewc39iqdd32gama785jkkrp3nxy9jre&quot;</span><span class="p">],</span>
+      <span class="s2">&quot;qty&quot;</span><span class="p">:</span> <span class="mi">1000000000</span><span class="p">,</span>
+      <span class="s2">&quot;seq&quot;</span><span class="p">:</span> <span class="mi">203</span><span class="p">,</span>
+      <span class="s2">&quot;sig&quot;</span><span class="p">:</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;MEQCIDwh7ipLsfbhMRwJ2pvKnluazvVbG79SUVGIzE7cEm95AiBfM57azZ6RXtsiCKnlNw7pFuaWlGqLBS5C0q3bgkp+yQ==&quot;</span><span class="p">]]</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Because TxOffset is 0, the transaction is the first transaction in block 13919 on the ndau blockchain. <code class="docutils literal notranslate"><span class="pre">TransactableID</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code>, so it is a <code class="docutils literal notranslate"><span class="pre">Transfer</span></code> transaction.</p>
+</div>
+</div>
+<div class="section" id="account-management-transactions">
+<h1>Account management transactions<a class="headerlink" href="#account-management-transactions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="transfer">
+<h2>Transfer<a class="headerlink" href="#transfer" title="Permalink to this headline">¶</a></h2>
+<p>Transfers ndau from one account to another. The source account must be unlocked and have a sufficient available balance to pay for the transfer and any fees. The destination account may be locked or unlocked but may not be in its unlock countdown period.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Source      address       `msg:&quot;src&quot; json:&quot;source&quot;`,
+	Destination address       `msg:&quot;dst&quot; json:&quot;destination&quot;`,
+	Qty         napu          `msg:&quot;qty&quot; json:&quot;qty&quot;`,
+	Sequence    int           `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures  []signature   `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="setvalidation">
+<h2>SetValidation<a class="headerlink" href="#setvalidation" title="Permalink to this headline">¶</a></h2>
+<p>Establishes the initial validation rules (script and keys) for an account. This transaction is signed with the account’s ownership key.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Target           address     `msg:&quot;tgt&quot; json:&quot;target&quot;`,
+	Ownership        publickey   `msg:&quot;own&quot; json:&quot;ownership&quot;`,
+	ValidationKeys   []publickey `msg:&quot;key&quot; json:&quot;validation_keys&quot;`,
+	ValidationScript string      `msg:&quot;val&quot; json:&quot;validation_script&quot;`,
+	Sequence         int         `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signature        signature   `msg:&quot;sig&quot; json:&quot;signature&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="changevalidation">
+<h2>ChangeValidation<a class="headerlink" href="#changevalidation" title="Permalink to this headline">¶</a></h2>
+<p>Changes the validation rules (script and keys) for an account.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Target           address      `msg:&quot;tgt&quot; json:&quot;target&quot;`,
+	NewKeys          []publickey  `msg:&quot;key&quot; json:&quot;new_keys&quot;`,
+	ValidationScript string       `msg:&quot;val&quot; json:&quot;validation_script&quot;`,
+	Sequence         int          `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures       []signature  `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="lock">
+<h2>Lock<a class="headerlink" href="#lock" title="Permalink to this headline">¶</a></h2>
+<p>Locks an account for the specified countdown period. Locked accounts may not be the source of <code class="docutils literal notranslate"><span class="pre">Transfer</span></code> transactions, but their balance
+may be used to pay fees for other transactions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Target     address      `msg:&quot;tgt&quot; json:&quot;target&quot;`,
+	Period     duration     `msg:&quot;per&quot; json:&quot;period&quot;`,
+	Sequence   int          `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature  `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="notify">
+<h2>Notify<a class="headerlink" href="#notify" title="Permalink to this headline">¶</a></h2>
+<p>Gives notice to unlock an account. After the account’s countdown period expires, the account is unlocked. Accounts in their
+countdown period may not be the source or destination of <code class="docutils literal notranslate"><span class="pre">Transfer</span></code> transactions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Target     address      `msg:&quot;tgt&quot; json:&quot;target&quot;`,
+	Sequence   int          `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature  `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="delegate">
+<h2>Delegate<a class="headerlink" href="#delegate" title="Permalink to this headline">¶</a></h2>
+<p>Delegates the responsibility for crediting account’s EAI to an active ndau network node. An account may be delegated or
+redelegated at any time, but does not earn EAI unless it is delegated.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Target     address      `msg:&quot;tgt&quot; json:&quot;target&quot;`,
+	Node       address      `msg:&quot;nod&quot; json:&quot;node&quot;`,
+	Sequence   int          `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature  `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="changerecourseperiod">
+<h2>ChangeRecoursePeriod<a class="headerlink" href="#changerecourseperiod" title="Permalink to this headline">¶</a></h2>
+<p>Changes the account’s recourse period, the time between a <code class="docutils literal notranslate"><span class="pre">Transfer</span></code> transaction and the addition of the transferred amount to
+the destination account’s available balance.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Target     address      `msg:&quot;tgt&quot; json:&quot;target&quot;`,
+	Period     duration     `msg:&quot;per&quot; json:&quot;period&quot;`,
+	Sequence   int          `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature  `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="setrewardsdestination">
+<h2>SetRewardsDestination<a class="headerlink" href="#setrewardsdestination" title="Permalink to this headline">¶</a></h2>
+<p>Set the destination account for redirecting EAI and node rewards. If a rewards destination is not
+set, EAI and node rewards will be credited directly to the account earning them.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Target      address      `msg:&quot;tgt&quot; json:&quot;target&quot;`,
+	Destination address      `msg:&quot;dst&quot; json:&quot;destination&quot;`,
+	Sequence    int          `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures  []signature  `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="transferandlock">
+<h2>TransferAndLock<a class="headerlink" href="#transferandlock" title="Permalink to this headline">¶</a></h2>
+<p>Transfers ndau to a newly-created account and locks it for the specified period. Its effect is identical to that of a
+<code class="docutils literal notranslate"><span class="pre">Transfer</span></code> transaction followed by a <code class="docutils literal notranslate"><span class="pre">Lock</span></code> transaction from the destination account. The destination account may not exist on
+the ndau blockchain prior to this transaction.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Source      address      `msg:&quot;src&quot; json:&quot;source&quot;`,
+	Destination address      `msg:&quot;dst&quot; json:&quot;destination&quot;`,
+	Qty         napu         `msg:&quot;qty&quot; json:&quot;qty&quot;`,
+	Period      duration     `msg:&quot;per&quot; json:&quot;period&quot;`,
+	Sequence    int          `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures  []signature  `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="createchildaccount">
+<h2>CreateChildAccount<a class="headerlink" href="#createchildaccount" title="Permalink to this headline">¶</a></h2>
+<p>Creates a “child” account and specifies the account’s initial validation rules, recourse period, and the node delegated to
+credit the account’s EAI. Used to propagate the properties of special account types to newly-created accounts.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Target                address     `msg:&quot;tgt&quot;  json:&quot;target&quot;`,
+	Child                 address     `msg:&quot;chd&quot;  json:&quot;child&quot;`,
+	ChildOwnership        publickey   `msg:&quot;cown&quot; json:&quot;child_ownership&quot;`,
+	ChildSignature        signature   `msg:&quot;csig&quot; json:&quot;child_signature&quot;`,
+	ChildRecoursePeriod   duration    `msg:&quot;cper&quot; json:&quot;child_recourse_period&quot;`,
+	ChildValidationKeys   []publickey `msg:&quot;ckey&quot; json:&quot;child_validation_keys&quot;`,
+	ChildValidationScript string      `msg:&quot;cval&quot; json:&quot;child_validation_script&quot;`,
+	ChildDelegationNode   address     `msg:&quot;nod&quot;  json:&quot;child_delegation_node&quot;`,
+	Sequence              int         `msg:&quot;seq&quot;  json:&quot;sequence&quot;`,
+	Signatures            []signature `msg:&quot;sig&quot;  json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="staking-transactions">
+<h1>Staking transactions<a class="headerlink" href="#staking-transactions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setstakerules">
+<h2>SetStakeRules<a class="headerlink" href="#setstakerules" title="Permalink to this headline">¶</a></h2>
+<p>Defines a set of chaincode stake rules by associating them with a stake rules account.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Target     address     `msg:&quot;tgt&quot; json:&quot;target&quot;`,
+	StakeRules string      `msg:&quot;krs&quot; json:&quot;stake_rules&quot;`,
+	Sequence   int         `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="stake">
+<h2>Stake<a class="headerlink" href="#stake" title="Permalink to this headline">¶</a></h2>
+<p>Stakes ndau to a specified set of stake rules by either staking directly to a stake rules account (primary stake) or by
+staking to a primary stake account (co-stake).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Target     address       `msg:&quot;tgt&quot; json:&quot;target&quot;`,
+	Rules      address       `msg:&quot;rul&quot; json:&quot;rules&quot;`,
+	StakeTo    address       `msg:&quot;sto&quot; json:&quot;stake_to&quot;`,
+	Qty        napu          `msg:&quot;qty&quot; json:&quot;qty&quot;`,
+	Sequence   int           `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature   `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="unstake">
+<h2>Unstake<a class="headerlink" href="#unstake" title="Permalink to this headline">¶</a></h2>
+<p>Revokes ndau previously staked. The right to unstake ndau is governed by the rules established in the stake rules account.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Target     address       `msg:&quot;tgt&quot; json:&quot;target&quot;`,
+	Rules      address       `msg:&quot;rul&quot; json:&quot;rules&quot;`,
+	StakeTo    address       `msg:&quot;sto&quot; json:&quot;stake_to&quot;`,
+	Qty        napu          `msg:&quot;qty&quot; json:&quot;qty&quot;`,
+	Sequence   int           `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature   `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="resolvestake">
+<h2>ResolveStake<a class="headerlink" href="#resolvestake" title="Permalink to this headline">¶</a></h2>
+<p>Resolves a stake by releasing all or part of it. Any portion (including all) of the stake may be burned instead of being
+released back to the staking account. The amount released is unstaked: the staking account does not need to submit an <code class="docutils literal notranslate"><span class="pre">Unstake</span></code>
+transaction. This transaction can only be submitted in accordance with the stake rules.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Target     address       `msg:&quot;tgt&quot; json:&quot;target&quot;`, primary staker
+	Rules      address       `msg:&quot;rul&quot; json:&quot;rules&quot;`,
+	Burn       int           `msg:&quot;brn&quot; json:&quot;burn&quot;`,
+	Sequence   int           `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature   `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="node-operations-transactions">
+<h1>Node operations transactions<a class="headerlink" href="#node-operations-transactions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="registernode">
+<h2>RegisterNode<a class="headerlink" href="#registernode" title="Permalink to this headline">¶</a></h2>
+<p>Registers a node as an active node on the ndau blockchain, eligible to receive node rewards and to be promoted to a
+validator node. The node account must already be successfully staked to the node operations stake rules account.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Node               address     `msg:&quot;nod&quot; json:&quot;node&quot;`,
+	DistributionScript string      `msg:&quot;dis&quot; json:&quot;distribution_script&quot;`,
+	Ownership          publickey   `msg:&quot;own&quot; json:&quot;ownership&quot;`,
+	Sequence           int         `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures         []signature `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="unregisternode">
+<h2>UnregisterNode<a class="headerlink" href="#unregisternode" title="Permalink to this headline">¶</a></h2>
+<p>Removes an ndau network node from active status.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Node       address     `msg:&quot;nod&quot; json:&quot;node&quot;`,
+	Sequence   int         `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="crediteai">
+<h2>CreditEAI<a class="headerlink" href="#crediteai" title="Permalink to this headline">¶</a></h2>
+<p>Credits EAI to all accounts delegated to a node. This transaction is submitted by the registered node account.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Node       address     `msg:&quot;nod&quot; json:&quot;node&quot;`,
+	Sequence   int         `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="claimnodereward">
+<h2>ClaimNodeReward<a class="headerlink" href="#claimnodereward" title="Permalink to this headline">¶</a></h2>
+<p>Claims a node’s node reward after it has been nominated to receive it by a <code class="docutils literal notranslate"><span class="pre">NominateNodeReward</span></code> transaction.
+The reward must be claimed by the active node within a short time period or it will be burned.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Node       address     `msg:&quot;nod&quot; json:&quot;node&quot;`,
+	Sequence   int         `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="system-transactions">
+<h1>System transactions<a class="headerlink" href="#system-transactions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="releasefromendowment">
+<h2>ReleaseFromEndowment<a class="headerlink" href="#releasefromendowment" title="Permalink to this headline">¶</a></h2>
+<p>Releases ndau from the Axiom Foundation Endowment. These new ndau are available to be issued into circulation, but are not
+yet in circulation or used in any ndau blockchain calculations.</p>
+<p>This transaction is validated by the signature rules of the account specified in the
+system variable <code class="docutils literal notranslate"><span class="pre">ReleaseFromEndowmentAddress</span></code>. That account pays the transaction fee.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Destination address      `msg:&quot;dst&quot; json:&quot;destination&quot;`,
+	Qty         napu         `msg:&quot;qty&quot; json:&quot;qty&quot;`,
+	Sequence    int          `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures  []signature  `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="issue">
+<h2>Issue<a class="headerlink" href="#issue" title="Permalink to this headline">¶</a></h2>
+<p>Issues ndau previously released from the Axiom Foundation Endowment into circulation.</p>
+<p>This transaction is validated by the signature rules of the account specified in the
+system variable <code class="docutils literal notranslate"><span class="pre">ReleaseFromEndowmentAddress</span></code>.  That account pays the transaction fee.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Qty        napu        `msg:&quot;qty&quot; json:&quot;qty&quot;`,
+	Sequence   int         `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="recordendowmentnav">
+<h2>RecordEndowmentNAV<a class="headerlink" href="#recordendowmentnav" title="Permalink to this headline">¶</a></h2>
+<p>Records the current Net Asset Value of the Axiom Foundation Endowment. This data is used to calculate whether SIB is in effect and, if so, what the current SIB fee is.</p>
+<p>This transaction is validated by the signature rules of the account specified in the
+system variable <code class="docutils literal notranslate"><span class="pre">ReleaseFromEndowmentAddress</span></code>.  That account pays the transaction fee.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	NAV        nanocent    `msg:&quot;nav&quot; json:&quot;nav&quot;`,
+	Sequence   int         `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="recordprice">
+<h2>RecordPrice<a class="headerlink" href="#recordprice" title="Permalink to this headline">¶</a></h2>
+<p>Records the current market price of ndau. This value is used to calculate whether SIB is in effect and, if so, what the current
+SIB fee is.</p>
+<p>This transaction is validated by the signature rules of the account specified in the
+system variable <code class="docutils literal notranslate"><span class="pre">RecordPriceAddress</span></code>.  That account pays the transaction fee.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	MarketPrice nanocent    `msg:&quot;prc&quot; json:&quot;market_price&quot;`,
+	Sequence    int         `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures  []signature `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="nominatenodereward">
+<h2>NominateNodeReward<a class="headerlink" href="#nominatenodereward" title="Permalink to this headline">¶</a></h2>
+<p>Nominates the node eligible to receive the currently-available node rewards. The nominated node must claim its
+reward within a short time period or it will be burned.</p>
+<p>This transaction is validated by the signature rules of the account specified in the
+system variable <code class="docutils literal notranslate"><span class="pre">NominateNodeRewardAddress</span></code>.  That account pays the transaction fee.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Random     int         `msg:&quot;rnd&quot; json:&quot;random&quot;`,
+	Sequence   int         `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="setsysvar">
+<h2>SetSysvar<a class="headerlink" href="#setsysvar" title="Permalink to this headline">¶</a></h2>
+<p>Sets a system variable.</p>
+<p>This transaction is validated by the signature rules of the account specified in the
+system variable <code class="docutils literal notranslate"><span class="pre">SetSysvarAddress</span></code>.  That account pays the transaction fee.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Name       string      `msg:&quot;nme&quot; json:&quot;name&quot;`,
+	Value      string      `msg:&quot;vlu&quot; json:&quot;value&quot;`,
+	Sequence   int         `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="commandvalidatorchange">
+<h2>CommandValidatorChange<a class="headerlink" href="#commandvalidatorchange" title="Permalink to this headline">¶</a></h2>
+<p>Changes a node’s “power”. All nodes with power greater than zero are part of the validator set.</p>
+<p>This transaction is validated by the signature rules of the account specified in the
+system variable <code class="docutils literal notranslate"><span class="pre">CommandValidatorChangeAddress</span></code>.  That account pays the transaction fee.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	Power      int         `msg:&quot;pow&quot; json:&quot;power&quot;`,
+	Sequence   int         `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures []signature `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="changeschema">
+<h2>ChangeSchema<a class="headerlink" href="#changeschema" title="Permalink to this headline">¶</a></h2>
+<p>Triggers an ndau node to shut down. Used to enable versioned upgrades which change the ndau blockchain’s database schema.</p>
+<p>This transaction is validated by the signature rules of the account specified in the
+system variable <code class="docutils literal notranslate"><span class="pre">ChangeSchemaAddress</span></code>.  That account pays the transaction fee.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
+	SchemaVersion string      `msg:&quot;sav&quot; json:&quot;schema_version&quot;`,
+	Sequence      int         `msg:&quot;seq&quot; json:&quot;sequence&quot;`,
+	Signatures    []signature `msg:&quot;sig&quot; json:&quot;signatures&quot;`
+}
+</pre></div>
+>>>>>>> master
+</div>
+</div>
+</div>
+
+
+          </div>
+<<<<<<< HEAD
+          
+=======
+>>>>>>> master
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<<<<<<< HEAD
+<h1 class="logo"><a href="contents.html">ndau</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blockchain.html">The ndau blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Transactions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#addresses-and-accounts">Addresses and accounts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#createchildaccount">CreateChildAccount()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delegate">Delegate()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#validation-rules">Validation rules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setvalidation">SetValidation()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changevalidation">ChangeValidation()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#transfers">Transfers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#transfer">Transfer()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transferandlock">TransferAndLock()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changerecourseperiod">ChangeRecoursePeriod()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#locking">Locking</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lock">Lock()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notify">Notify()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setrewardsdestination">SetRewardsDestination()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#staking">Staking</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#stake">Stake()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unstake">Unstake()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setstakerules">SetStakeRules()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#node-operations">Node operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#registernode">RegisterNode()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unregisternode">UnregisterNode()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#crediteai">CreditEAI()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nominatenodereward">NominateNodeReward()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#claimnodereward">ClaimNodeReward()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#monetary-policy">Monetary policy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#releasefromendowment">ReleaseFromEndowment()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#issue">Issue()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recordprice">RecordPrice()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recordendowmentnav">RecordEndowmentNAV()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ndau-network-operations">ndau network operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#commandvalidatorchange">CommandValidatorChange()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setsysvar">SetSysvar()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#changeschema">ChangeSchema()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">The ndau API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">ndau tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="staking.html">Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localnet.html">Building an ndau localnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodeoperation.html">Node operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exchangeintegration.html">Exchange integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.html">Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html">General Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html#definitions">Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html#the-wallet-at-genesis-source">The Wallet at Genesis (source)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html#mvp-wallet-with-example-of-an-imported-private-key-source">MVP wallet with example of an imported private key (source)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html#stuff-that-shouldnt-be-in-a-glossary">Stuff that shouldn’t be in a glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact info</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+      <li>Previous: <a href="user.html" title="previous chapter">User</a></li>
+      <li>Next: <a href="api.html" title="next chapter">The ndau API</a></li>
+  </ul></li>
+</ul>
+</div>
+=======
+  <h3><a href="contents.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Transactions - ndau API</a><ul>
+<li><a class="reference internal" href="#data-types">Data Types</a></li>
+<li><a class="reference internal" href="#submitting-transactions">Submitting transactions</a></li>
+<li><a class="reference internal" href="#querying-transactions">Querying transactions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mainnet-and-testnet">Mainnet and Testnet</a></li>
+<li><a class="reference internal" href="#examples">Examples</a><ul>
+<li><a class="reference internal" href="#submittal">Submittal</a></li>
+<li><a class="reference internal" href="#query">Query</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#account-management-transactions">Account management transactions</a><ul>
+<li><a class="reference internal" href="#transfer">Transfer</a></li>
+<li><a class="reference internal" href="#setvalidation">SetValidation</a></li>
+<li><a class="reference internal" href="#changevalidation">ChangeValidation</a></li>
+<li><a class="reference internal" href="#lock">Lock</a></li>
+<li><a class="reference internal" href="#notify">Notify</a></li>
+<li><a class="reference internal" href="#delegate">Delegate</a></li>
+<li><a class="reference internal" href="#changerecourseperiod">ChangeRecoursePeriod</a></li>
+<li><a class="reference internal" href="#setrewardsdestination">SetRewardsDestination</a></li>
+<li><a class="reference internal" href="#transferandlock">TransferAndLock</a></li>
+<li><a class="reference internal" href="#createchildaccount">CreateChildAccount</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#staking-transactions">Staking transactions</a><ul>
+<li><a class="reference internal" href="#setstakerules">SetStakeRules</a></li>
+<li><a class="reference internal" href="#stake">Stake</a></li>
+<li><a class="reference internal" href="#unstake">Unstake</a></li>
+<li><a class="reference internal" href="#resolvestake">ResolveStake</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#node-operations-transactions">Node operations transactions</a><ul>
+<li><a class="reference internal" href="#registernode">RegisterNode</a></li>
+<li><a class="reference internal" href="#unregisternode">UnregisterNode</a></li>
+<li><a class="reference internal" href="#crediteai">CreditEAI</a></li>
+<li><a class="reference internal" href="#claimnodereward">ClaimNodeReward</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#system-transactions">System transactions</a><ul>
+<li><a class="reference internal" href="#releasefromendowment">ReleaseFromEndowment</a></li>
+<li><a class="reference internal" href="#issue">Issue</a></li>
+<li><a class="reference internal" href="#recordendowmentnav">RecordEndowmentNAV</a></li>
+<li><a class="reference internal" href="#recordprice">RecordPrice</a></li>
+<li><a class="reference internal" href="#nominatenodereward">NominateNodeReward</a></li>
+<li><a class="reference internal" href="#setsysvar">SetSysvar</a></li>
+<li><a class="reference internal" href="#commandvalidatorchange">CommandValidatorChange</a></li>
+<li><a class="reference internal" href="#changeschema">ChangeSchema</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/transactions.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+>>>>>>> master
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+=======
+>>>>>>> master
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<<<<<<< HEAD
+    <div class="footer">
+      &copy;2019, Oneiro NA, Inc..
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/transactions.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+=======
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="contents.html">ndau  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Oneiro NA, Inc..
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+>>>>>>> master
+  </body>
+</html>

@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>User &#8212; ndau  documentation</title>
+<<<<<<< HEAD
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+=======
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+>>>>>>> master
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+<<<<<<< HEAD
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Transactions" href="transactions.html" />
+    <link rel="prev" title="The ndau blockchain" href="blockchain.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+=======
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="contents.html">ndau  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+>>>>>>> master
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+<<<<<<< HEAD
+          
+
+=======
+>>>>>>> master
+          <div class="body" role="main">
+            
+  <div class="section" id="user">
+<h1>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h1>
+<p>NO EDITING HAS BEEN DONE AFTER THIS POINT. SOME OF THIS MATERIAL WILL MOVE OUT OF THIS DOCUMENT AND INTO NETWORK/IMPLEMENTATION SPECIFICATIONS.
+As of 8/10/18, this is not worth reading yet.</p>
+<p>The complete state of an address is derivable at any time by playing back all of the transactions on the chain that mention that address. In practice, nodes will maintain a cached list of some or all addresses and their state so as to simplify and speed up processing.</p>
+<p>## Wallet</p>
+<p>A wallet is a software application for managing ndau addresses. Wallets may offer various organizational features to the user, but they are independent of the ndau blockchain and are not recorded on it. ndau transactions only operate on addresses, but wallets may offer features allowing users to aggregate addresses in various ways for convenience.</p>
+<p>## Node</p>
+<p>A node is a computing device participating in the ndau network, running ndau blockchain software.</p>
+<p>Each node is identified by exactly one ndau address, which is used to mediate node operations.</p>
+<p>Nodes may monitor or store the ndau blockchain and propose transactions to it.</p>
+<p>## Node Operator</p>
+<p>An entity responsible for operating one or more nodes. The node operator of a particular node is considered to be the entity that holds the private key for the node’s staked address.</p>
+<p>## Stake</p>
+<p>A stake is a quantity of ndau associated with a node and held as a surety bond. “Stake” is also a verb describing the process of that association.</p>
+<p>Stake may be forfeited (slashed) as a penalty for poor or malicious node behavior. Stake has a target – the address to which the stake is pledged.</p>
+<p>“Self-stake” is ndau in an address staked to itself. ndau staked to a different address is “co-stake”.</p>
+<p>## Active Node</p>
+<p>An active node is one that has self-staked the minimum quantity of ndau currently specified by the BPC.</p>
+<p>Any rewards for a node’s participation in the ndau network are credited to its address.</p>
+<p>## Resiliency Score</p>
+<p>The resiliency score measures the quality of an active node’s performance in support of the ndau network. It is based on a node’s total stake, performance, and other performance metrics.</p>
+<p>## Validator Node</p>
+<p>A validator node is an active node currently assigned to the consensus engine’s network.</p>
+<p>Any validator node may be selected to prepare a block for an ndau blockchain. All validator nodes participate in the consensus mechanism to add new blocks to an ndau blockchain.</p>
+<p>Active nodes that are not currently validator nodes may become validator nodes at any time to support network resiliency.</p>
+<p>## Transaction Fees</p>
+<p>A fee is charged for all transactions. In some cases fees may be set to 0 ndau.</p>
+<p>The fee is paid from each transaction’s source address.</p>
+<p>Fees are set by a published fee schedule that is controlled by the BPC. In some cases, the fee’s value may be determined by a formula rather than being a scalar value.</p>
+<p>## Ecosystem Alignment Incentives (EAI)</p>
+<p>Ecosystem Alignment Incentives are newly-issued ndau available to ndau holders to incent holder behavior in support of ndau fiscal policy and goals.</p>
+<p>EAI is only credited to addresses delegating that action to active nodes. EAI accrues at rates based on a published schedule.</p>
+<p>EAI is accrued for each address but not credited to that address until its associated node explicitly requests it by submitting an EAI claim transaction. The BPC may specify additional requirements, to encourage ecosystem participation, before accrued EAI may be credited to an address.</p>
+<p>## EAI Service Fees</p>
+<p>Mandatory service fees are deducted from all EAI: they include
+* An Ecosystem Funding Fee (4%)
+* A Market Maker Price Discovery Fee (1%)
+* A Node Operations Fee (10%)</p>
+<p>## Node Operation Rewards</p>
+<p>Node operation rewards incent node operators to improve network performance and resilience.</p>
+<p>Rewards are paid from both transaction fees and the node operations fee deducted from EAI.</p>
+<p>Only active nodes earn node operations rewards.</p>
+<p># Implementation Notes</p>
+<p>## Time</p>
+<p>It is tempting to simply use block number (a monotonically increasing value) as the only timestamp, and to denominate all time-based calculations in terms of block numbers. However, block rate can vary, and may in fact vary both up and down, especially early in the life of ndau. This will play havoc with human-understood quantities like annualized rates and expiration times. Consequently, we really must have a more time-based approach.</p>
+<p>Clock time is right out. The complications involved with keeping clock time correct (leap years, leap days, etc) are particularly troublesome when durations are required – and almost everything we’re doing is with respect to duration. Consequently, we just use time as a duration in milliseconds from a fixed point, which is a monotonically increasing number.</p>
+<p>Timestamps are a 64-bit value corresponding to the number of microseconds (usec) since the start of the epoch (which will be arbitrarily defined from some meaningful date); there is enough resolution that this value will not overflow for half a million years.</p>
+<p>Every block has a timestamp that is set by the block proposer, and which must be strictly greater than that of the previous block.</p>
+<p>Transactions must also include a timestamp, also specified as a duration since the epoch. The timestamp of the transaction must be within <cite>timestamp_precision</cite> of the most recent’s block timestamp or the transaction will be rejected. It is expected that <cite>timestamp_precision</cite> will be roughly equivalent to either the maximum permitted network latency or the interval between blocks, whichever is greater.</p>
+<p>All time-based calculations, such as EAI and the like, will be done using these times. All durations will be measured in milliseconds by subtracting these timestamps.</p>
+<p>Note that some public values, like EAI durations, are specified in units of days or years. Values specified in days will use an 86400-second standard day, and durations specified in years will assume a year of exactly 365 standard days. Leap years and leap seconds are not considered; conversion between clock time and system time is not part of the ndau specification.</p>
+<p>## Transaction Ordering</p>
+<p>All transactions must have a timestamp, as stated above. All timestamps generated by a given source address must be processed in strict timestamp order. The ordering within a block is not important (clients are expected to sort transactions by timestamp within a block). However, a transaction from address A in block N must be timestamped earlier than any transaction from address A in any later block.</p>
+<p>(Note – do we have to be stricter than this? Do we have to also restrict destinations?)</p>
+<p>## ndau Units</p>
+<p>The ndau is the standard currency unit. One ndau is composed of 100 Million (10^8) <cite>napu</cite>. One napu is the smallest division of ndau that can be calculated or transferred – fractional napu (“dust”) are simply discarded (not rounded).</p>
+<p>All ndau calculations are done with integer quantities of napu. All ndau calculations (especially those involving multiplication and division) are defined with order of operations carefully documented so that the result is well-defined and repeatable. Quantities of ndau are stored as 64-bit integer amounts of napu, and calculations (especially those involving multiplication) are expected to use “big number” libraries to avoid overflow.</p>
+<p>## Rate Units</p>
+<p>Rates are important to the ndau system. Rates are normally quoted as decimal fractions. However, for repeatability we would like to use integer multiples of a quantum value, so we are using millionths of a basis point as the minimum quantum for interest rates (rates are specified to 8 decimal places). Rate calculations are done by multiplying the integer quantum value using big number math and then dividing by 10^8.</p>
+<p>## Random numbers</p>
+<p>Random values are recorded as 64-bit integers, rectangularly distributed (all values are equally possible).</p>
+<p>## Transaction fees</p>
+<p>All transactions have an associated fee.</p>
+<p>Transfer transactions incur a fee of X% of the transfer amount, within a range between a minimum and maximum value. Other transaction types have additional fees that are constant.</p>
+<p>Every transaction also pays a fee that is a function of the number of bytes in the transaction (transactions with multiple destinations or complex signatures will incur a higher cost).</p>
+<p>The values of all these parameters are controlled by governance.</p>
+<p>Fees are paid by the originator (source) of the transaction.</p>
+<p>Transaction fees are paid to node operators as part of the node operations rewards.</p>
+<p># Implementation questions</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>What if the RewardTarget is in the notified state?</dt><dd><ul>
+<li><dl class="simple">
+<dt>For EAI, this can happen to both reward-targeted addresses as well as untargeted addresses. There is no fallback. The choices are:</dt><dd><ul>
+<li><p>Fail EAI transactions and burn the EAI</p></li>
+<li><p>Pay anyway because total EAI impact is limited (but this does allow someone to be earning as much as 15% on EAI with short-term liquidity)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Node rewards specify many targets so one invalid one should not be a failure. However, because a node’s address must be staked, node rewards cannot be due directly to an address in the notified state; this can only happen through targeting. Options:</dt><dd><ul>
+<li><p>If target is in the notified state, pay rewards instead to main address (which will make them unspendable since the address is by definition staked)</p></li>
+<li><p>Burn the reward (complicated because of system EAI)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p># Transactions</p>
+<p>## Summary</p>
+<p>Transactions always have a <strong>source</strong>: the account whose signature is required in order to validate the transaction. The source is the object of the transaction’s action unless specified otherwise. Transactions may also have one or more <strong>targets</strong>; these are additional accounts that will be affected by the transaction.</p>
+<p>Transactions on the ndau blockchain can be grouped into broad categories:</p>
+<ul class="simple">
+<li><p>Financial: Transactions that directly affect the source’s <cite>Balance</cite> or the mechanisms by which the <cite>Balance</cite> is determined.</p></li>
+<li><p>Node operations: Transactions used to manage the operations of a node.</p></li>
+<li><p>Governance: Transactions used for governance of the blockchain system as a whole.</p></li>
+</ul>
+<p>### Financial Transactions</p>
+<p>All financial transactions must be signed by the <cite>TransferKey</cite> of the source; therefore, none of these transactions can occur until that <cite>TransferKey</cite> has been set.</p>
+<ul class="simple">
+<li><p><em>Transfer to Target:</em> Transfers of a quantity of ndau from the source account to the target account</p></li>
+<li><p><em>Change Transfer Key:</em> Sets the account’s transfer key to be used for future financial transactions; invalid if <cite>TransferKey</cite> is null.</p></li>
+<li><p><em>Delegate to Target:</em> Specifies the address of the active node that is to be responsible for crediting accrued EAI to this account. An account must be delegated to an active node to be eligible to earn EAI. This transaction is valid if the account is already delegated to an active node: it changes the account’s delegation to the newly-specified active node.</p></li>
+<li><p><em>Lock:</em> Sets the <cite>NoticePeriod</cite> for an account and locks it; this influences EAI rates. A locked account may not be used as the source for a <em>Transfer from Source to Target</em> transaction. The account may not be already locked.</p></li>
+<li><p><em>Notify:</em> Starts the notification period for a source and calculates the account’s <cite>UnlockTimestamp</cite>. The source account must be locked, not staked, and not already notified.</p></li>
+<li><p><em>Set Rewards Target:</em> Directs this account’s earned EAI and node operations rewards to a different address. By default, these rewards are directed to the account itself.</p></li>
+<li><p><em>Stake to Target</em> Assigns this account as stake to an active node and makes it eligible to share in node rewards. The account must already be locked with the minimum <cite>NoticePeriod</cite> specified by the BPC and may be required to meet other criteria (e.g. minimum balance). If the target is null the source account is unstaked, making it ineligible for further node rewards but eligible for unlock notification with a <cite>Notify Source</cite> transaction.</p></li>
+</ul>
+<p>### Node Operations Transactions</p>
+<p>These transactions must be signed by the <cite>TransferKey</cite> of the source.</p>
+<ul class="simple">
+<li><p><em>EAI Credit to Targets:</em> Credits the target’s accrued EAI to its balance. This transaction may only be issued by the active node to which the account has currently delegated this transaction. The target’s eligibility to receive this credit is determined by any EAI rules currently in place. The source account is not affected unless it is specified as the target of this transaction.</p></li>
+<li><p><em>Node Start:</em> Registers a node as an active node, provided that the node’s account meets the current self-staking requirements. This transaction includes the script that specifies how the node will distribute its node rewards to co-staked accounts.</p></li>
+<li><p><em>Node Reward Claim:</em> Claims the node rewards made available to the source account in a <em>Node Reward Nomination</em> transaction. Node rewards must be claimed promptly after a nomination, otherwise they are burned. This transaction must distribute rewards to the specified co-staked target accounts using the script specified in the <em>Node Start</em> transaction.</p></li>
+</ul>
+<p>### Governance Transactions</p>
+<p>All governance transactions must be signed by the <cite>OwnershipKey</cite> of the associated account.</p>
+<ul class="simple">
+<li><p><em>Set Initial Transfer Key:</em> Sets the initial <cite>TransferKey</cite> to be used for this account’s non-governance transactions. This transaction is invalid if the account’s current <cite>TransferKey</cite> is not null.</p></li>
+<li><p><em>Node Reward Nomination:</em> Specifies the active node eligible to claim the current node rewards. It is generated by a central service and must be signed by the canonical node reward nomination account.</p></li>
+</ul>
+<p>## Common elements of transactions</p>
+<p>### Timestamp</p>
+<p>Timestamps are signed 64-bit values corresponding to the number of microseconds (μsec) since the start of the epoch (which will be arbitrarily defined from some meaningful date); there is enough resolution that this value will not overflow for almost 300,000 years. Timestamps may be subtracted to calculate a duration.</p>
+<p>One of the system variables on the Chaos Chain is <cite>timestamp_precision</cite>. This is a duration.</p>
+<p>All transactions must include a timestamp. In order to be sure that transactions are accurate and processed in a timely fashion, the timestamp of the transaction must be within <cite>timestamp_precision</cite> of the most recent’s block timestamp or the transaction will be rejected. This value is one of the system variables on the Chaos Chain. It is expected that <cite>timestamp_precision</cite> will be roughly equivalent to either the maximum permitted network latency or the interval between blocks, whichever is greater.</p>
+<p>All time-based calculations, such as EAI and the like, will be done using transaction timestamps.</p>
+<p>### Signatures</p>
+<p>Every transaction must be signed. Signatures contain a data block, which was created by signing a hash of the transaction data with the private key corresponding to the public key of the source.</p>
+<p>For signatures created with a private <cite>TransferKey</cite>, the signature only needs to contain the data block itself. the public <cite>TransferKey</cite> is available as part of the address state, . The signature can be verified by using that public <cite>TransferKey</cite>.</p>
+<p>For signatures created with a private <cite>OwnershipKey</cite>, the signature must also contain the public <cite>OwnershipKey</cite>. The signature verification process includes generating an address from the public key and confirming that it is identical to the transaction’s source address.</p>
+<p>If a signature fails to validate, the transaction is rejected.</p>
+<p>### Transaction Fees</p>
+<p>Every transaction requires a transaction fee. A transaction fee may include:</p>
+<ul class="simple">
+<li><p>A per-byte fee; larger transactions take up more space and require a higher fee.</p></li>
+<li><p>A fee based on the transaction type. Different transactions incur different fees.</p></li>
+<li><p>For transfer transactions, a fee based on the amount transferred. Transactions of a larger number of ndau cost more.</p></li>
+</ul>
+<p>The transaction fees are recorded on the Chaos chain as system variables that are functions written in Chain code, and are subject to adjustment by the BPC.</p>
+<p>Every transaction has a field for transaction fees, and the fees must be exactly correct or the transaction will be rejected.</p>
+<p>## Financial Transactions</p>
+<p>All Financial Transactions must be signed by the Source’s current <cite>TransferKey</cite> or they will be rejected. If the <cite>TransferKey</cite> is null, the transaction will be rejected.</p>
+<p>### Transfer</p>
+<p>Causes a transfer of a quantity of ndau from the Source account to the Target account.</p>
+<p><em>State affected:</em>
+- Source <cite>Balance</cite> is reduced by the sum of <cite>TransferAmount</cite> and <cite>TransactionFee</cite> and <cite>SIB</cite>
+- Target <cite>Balance</cite> is increased by <cite>TransferAmount</cite>
+- Target <cite>WeightedAverageAge</cite> is updated.</p>
+<p><em>Transaction Fields:</em>
+- <cite>Timestamp</cite>
+- <cite>SourceAddress</cite>
+- <cite>TargetAddress</cite>
+- <cite>TransferAmount</cite>
+- <cite>TransactionFee</cite>
+- <cite>SIB</cite>
+- <cite>Signature</cite></p>
+<p><em>Validation rules:</em>
+- Source <cite>TransferKey</cite> must not be null
+- Target address must not be the Source address
+- Source <cite>NoticePeriod</cite> must be zero
+- Target <cite>NoticePeriod</cite> must be zero
+- Must be signed by the Source <cite>TransferKey</cite>
+- <cite>SIB</cite> must be the appropriate value based on the current SIB percentage in effect, multiplied by <cite>TransferAmount</cite>
+- The sum of <cite>TransferAmount</cite>, <cite>TransactionFee</cite>, and <cite>SIB</cite> must be greater than or equal to the source <cite>Balance</cite></p>
+<p>### ChangeTransferKey</p>
+<p>Changes the transfer key that is used for all financial transactions.</p>
+<p><em>State affected:</em>
+- Source <cite>TransferKey</cite> receives a new value</p>
+<p><em>Transaction Fields:</em>
+- <cite>Timestamp</cite>
+- <cite>SourceAddress</cite>
+- <cite>NewTransferKey</cite> – a public key
+- <cite>TransactionFee</cite>
+- <cite>Signature</cite></p>
+<p><em>Validation rules:</em>
+- <cite>NewTransferKey</cite> must not be null
+- <cite>NewTransferKey</cite> must be different from Source <cite>TransferKey</cite></p>
+<p>### Delegate</p>
+<p>Sets <cite>DelegationNode</cite>, which is the address of the node that will create EAI claim transactions for this address.</p>
+<p><em>State affected:</em>
+- Source <cite>DelegationNode</cite> gets a new value.</p>
+<p><em>Transaction Fields:</em>
+- <cite>Timestamp</cite>
+- <cite>SourceAddress</cite>
+- <cite>NewDelegationAddress</cite> – an address in standard form
+- <cite>TransactionFee</cite>
+- <cite>Signature</cite></p>
+<p><em>Validation rules:</em>
+- <cite>NewDelegationAddress</cite> must be a node address currently on the active node list
+- <cite>NewDelegationAddress</cite> must be different from Source <cite>DelegationAddress</cite></p>
+<p>### LockSource</p>
+<p>Sets <cite>NoticePeriod</cite> for a source; this influences EAI rates. If <cite>NoticePeriod</cite> is not zero, the account is said to be “locked”.</p>
+<p><em>State affected:</em>
+- <cite>NoticePeriod</cite> is set to <cite>NewNoticePeriod</cite>
+- <cite>UnlockTimestamp</cite> is set to 0
+- <cite>WeightedAverageAge</cite> is incremented by <cite>NewNoticePeriod</cite></p>
+<p><em>Transaction Fields:</em>
+- <cite>Timestamp</cite>
+- <cite>SourceAddress</cite>
+- <cite>NewNoticePeriod</cite> – a duration in microseconds
+- <cite>TransactionFee</cite>
+- <cite>Signature</cite></p>
+<p><em>Validation rules:</em>
+- <cite>DelegationNode</cite> must be non-empty
+- Source <cite>NoticePeriod</cite> must be less than <cite>NewNoticePeriod</cite>
+- <cite>NewNoticePeriod</cite> must be at least 24 hours and no more than 5 years.</p>
+<p><em>Notes</em>
+- What should the min/max be?
+- Do we need to restrict <cite>NewNoticePeriod</cite> to specific values? (I don’t think so)</p>
+<p>### NotifySource</p>
+<p>Sets <cite>UnlockTimestamp</cite> for a source and prevents this node from being a target of transfer transactions until <cite>NoticePeriod</cite> expires.</p>
+<p><em>State affected:</em>
+- <cite>UnlockTimestamp</cite> is set to transaction <cite>Timestamp</cite> plus Source <cite>NoticePeriod</cite>
+- Source <cite>WeightedAverageAge</cite> is updated.</p>
+<p><em>Transaction Fields:</em>
+- <cite>Timestamp</cite>
+- <cite>SourceAddress</cite>
+- <cite>TransactionFee</cite>
+- <cite>Signature</cite></p>
+<p><em>Validation rules:</em>
+- Source <cite>NoticePeriod</cite> must be nonzero
+- Source <cite>UnlockTimestamp</cite> must be zero</p>
+<p>### SetRewardsTarget</p>
+<p>Sets <cite>RewardsTarget</cite> for a source; this directs this account’s reward transactions to a different address.</p>
+<p><em>State affected:</em>
+- <cite>RewardsTarget</cite> is set to <cite>NewRewardsTarget</cite></p>
+<p><em>Transaction Fields:</em>
+- <cite>Timestamp</cite>
+- <cite>SourceAddress</cite>
+- <cite>NewRewardsTarget</cite> – the address of the rewards target, or 0. If <cite>NewRewardsTarget</cite> is the same as the Source address, <cite>RewardsTarget</cite> is set to 0.
+- <cite>TransactionFee</cite>
+- <cite>Signature</cite></p>
+<p><em>Validation rules:</em>
+- <cite>NewRewardsTarget</cite> must be different than Source <cite>RewardsTarget</cite></p>
+<p>### StakeToTarget</p>
+<p>Sets <cite>StakeTarget</cite> for a source; this is an identifier of the node to which this address is staked; it may be its own address, in which case the address is said to be “self-staked”. A staked node can participate in node rewards for. Target may be null, which unstakes the source (making it ineligible for node rewards but eligible for notification).</p>
+<p><em>State affected:</em>
+- <cite>StakeTarget</cite> is set to <cite>NewStakeTarget</cite></p>
+<p><em>Transaction Fields:</em>
+- <cite>Timestamp</cite>
+- <cite>SourceAddress</cite>
+- <cite>NewStakeTarget</cite> – the address of the stake target, or 0 to unstake. It is permissible for <cite>NewStakeTarget</cite> to be the same as the Source address.
+- <cite>TransactionFee</cite>
+- <cite>Signature</cite></p>
+<p><em>Validation rules:</em>
+- <cite>NewStakeTarget</cite> must be different from the current value of Source <cite>StakeTarget</cite>
+- <cite>NoticePeriod</cite> must be greater than <cite>system.MinimumNoticePeriod</cite>
+- <cite>UnlockTime</cite> must be zero
+If this is nonzero, <cite>NoticePeriod</cite> must have a minimum value AND <cite>UnlockTime</cite> must be zero.</p>
+<p>## Transaction Validation</p>
+<p>All ndau transactions must be signed with the <cite>TransferKey</cite> currently associated with the transaction’s source account. That key must first be set by a <em>Set Initial Transfer Key</em> transaction after an account has been created by a transfer of ndau to its address. It may be modified by a <em>Change Transfer Key</em> transaction at any point after the initial key has been set.</p>
+<p>An account may also have an optional <cite>ValidationScript</cite> attached to it. If such a script exists, it is used to provide further control over the validity of a transaction. Once the transaction’s signature has been validated, this script is executed by the Chaincode VM. If it returns <code class="docutils literal notranslate"><span class="pre">`TRUE`</span></code> the transaction is considered valid; any other return value causes the transaction validation to fail.</p>
+<p>The validation script runs in a sandboxed VM with limited access to the current state of the blockchain. The current <cite>Transaction</cite> and source <cite>Account</cite> attributes are pushed on the stack before the Chaincode script is run, but no other information is provided. Chaincode scripts may only modify values on their own stack within their current VM context, and may only return values by leaving them on that stack.</p>
+<p>Both the validation script and the transaction signature check must be valid for the transaction to be considered valid, and the validation script is not executed if the transaction signature is not correct.</p>
+<p>## Validation Script Transactions</p>
+<p>Validation scripts are properties of accounts: at any time an account may have either one validation script or no script at all. An account with no validation script only require standard transaction signature validation.</p>
+<ul class="simple">
+<li><p><em>Set Initial Transfer Key:</em> This transaction sets the account’s initial transfer key. It may also optionally specify the account’s initial validation script. Accounts intended to be controlled by a validation script should have that script set atomically in this transaction along with the initial transfer key: otherwise all transactions will be permitted.</p></li>
+<li><p><em>Change Validation Script:</em> Replaces the account’s current validation script with a new script or a null script. If the current validation script is null, the new script is simply assigned to the account. Accounts controlled with a validation script should ensure that proper protection is given to this transaction to prevent unauthorized changes to it.</p></li>
+</ul>
+<p>## Example Validation Scripts</p>
+<p>Chaincode is a stack-based assembler that runs in a per-instance virtual machine. It may be used in other contexts beyond transaction validation: it is documented separately.</p>
+<p>Node operator features</p>
+<p>### Active node requirements</p>
+<ol class="arabic simple">
+<li><p>Any device may begin to operate as an ndau network node. An ndau network node can monitor the ndau blockchains and submit transactions.</p></li>
+<li><p>A node becomes an active node once it has staked ndau to its node address (“self-staking”). Staked ndau may be forfeited due to poor node behavior. [See note 2]</p></li>
+<li><p>Other addresses may also be staked to a node address (“co-staking”).</p></li>
+<li><p>Nodes will be ranked by an overall quality/resiliency score based on the node’s total stake (self-stake and co-stake) and other criteria.</p></li>
+<li><p>The highest-ranked nodes will be selected to serve as validator nodes in the consensus mechanism.</p></li>
+</ol>
+<p>### Computation and granting of node operations rewards</p>
+<ol class="arabic simple">
+<li><p>All transaction fees and network operation fees (currently 10% of EAI) since the last node rewards nomination are added to a node rewards pool.</p></li>
+<li><p>When the node rewards pool is to be awarded, a node rewards nomination is posted identifying the node entitled to claim that pool. [See note 3]</p></li>
+<li><p>The nominated node must respond and claim the node rewards pool within a specified time limit. If the pool is not claimed in time, the entire pool is forfeited and the ndau in it are burned.</p></li>
+<li><p>Other EAI fees (4% Ecosystem Funding fee, 1% Market Maker Price Discovery fee) accrued since the last successful node claim are transferred to the appropriate recipient addresses as part of the node rewards claim transaction.</p></li>
+<li><p>A node receiving a node rewards pool is expected to distribute a portion of it to addresses co-staked to it. The distribution criteria are to be specified by the node operator and published so address holders can use that information in their decision whether to co-stake to any particular node.</p></li>
+</ol>
+<p># Major open issues needing further discussion</p>
+<ol class="arabic simple">
+<li><p>The details of the SIB mechanism and its implementation are not yet resolved. At MVP, ndau will not be traded on exchanges, so a Market Price cannot be calculated and therefore the SIB cannot be in effect.</p></li>
+<li><p>The details of self-staking and co-staking need further specification. The mechanisms for slashing self-stake and co-stake for undesirable or malicious behavior have not been discussed. At MVP, self-staking will require a trivial stake and that stake will not be slashed. Oneiro will operate all nodes and all ndau holders must assume that all nodes can be trusted.</p></li>
+<li><p>The final mechanism for distribution of node rewards among active nodes, validator nodes, block preparer node, etc. is not yet resolved. At MVP, Oneiro will operate all nodes (and therefore receive all node rewards) so the distribution mechanism may still change without affecting node operators.</p></li>
+</ol>
+</div>
+
+
+          </div>
+<<<<<<< HEAD
+          
+=======
+>>>>>>> master
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<<<<<<< HEAD
+<h1 class="logo"><a href="contents.html">ndau</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blockchain.html">The ndau blockchain</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">The ndau API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">ndau tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="staking.html">Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localnet.html">Building an ndau localnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodeoperation.html">Node operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exchangeintegration.html">Exchange integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sources.html">Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html">General Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html#definitions">Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html#the-wallet-at-genesis-source">The Wallet at Genesis (source)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html#mvp-wallet-with-example-of-an-imported-private-key-source">MVP wallet with example of an imported private key (source)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html#stuff-that-shouldnt-be-in-a-glossary">Stuff that shouldn’t be in a glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact info</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+      <li>Previous: <a href="blockchain.html" title="previous chapter">The ndau blockchain</a></li>
+      <li>Next: <a href="transactions.html" title="next chapter">Transactions</a></li>
+  </ul></li>
+</ul>
+</div>
+=======
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/user.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+>>>>>>> master
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+=======
+>>>>>>> master
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<<<<<<< HEAD
+    <div class="footer">
+      &copy;2019, Oneiro NA, Inc..
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/user.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+=======
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="contents.html">ndau  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Oneiro NA, Inc..
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+>>>>>>> master
+  </body>
+</html>

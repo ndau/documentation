@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sources &#8212; ndau  documentation</title>
+<<<<<<< HEAD
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+=======
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+>>>>>>> master
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+<<<<<<< HEAD
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Specifications" href="specifications.html" />
+    <link rel="prev" title="Exchange integration" href="exchangeintegration.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+=======
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="contents.html">ndau  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+>>>>>>> master
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+<<<<<<< HEAD
+          
+
+=======
+>>>>>>> master
+          <div class="body" role="main">
+            
+  <div class="section" id="sources">
+<h1>Sources<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h1>
+<p>CreditEAI Procedure</p>
+<ol class="arabic simple">
+<li><p>CreditEAI transactions are issued by active nodes and each causes all accounts delegated to that node to have their accrued EAI credited, provided they are not currently on the BPC list of accounts forfeiting EAI.  and each includes a list of accounts to which accrued EAI is to be credited.</p></li>
+<li><p>The transaction is not valid if it lists an account not delegated to the node submitting it, or if it lists an account currently listed in the BPC’s “forfeited EAI” blacklist.</p></li>
+<li><p>The CreditEAI transaction fee includes a per-byte component, discouraging nodes from listing accounts more often than necessary.</p></li>
+<li><p>There are two applicable CreditEAI limits published on the chaos chain: a maximum elapsed time and a maximum accrued amount. Nodes are responsible for crediting EAI to each account with sufficient frequency to not exceed either of those limits.</p></li>
+<li><p>If those limits are exceeded, the next CreditEAI transaction will credit the amount accrued as if the most recent CreditEAI transaction had occurred at the oldest time that would not have exceeded either of them.</p></li>
+<li><p>There is no minimum elapsed time between credits to any given account, nor is there a minimum amount to be credited. Nodes and accounts are penalized for too-frequent credits: the node pays unnecessary fees, and the account loses more EAI due to truncation.</p></li>
+<li><p>No accrued EAI is lost if an account is redelegated to a new node. The next CreditEAI transaction issued by the new node will credit all accrued EAI due, subject to the time and quantity limits listed in #5 above.</p></li>
+</ol>
+<p>EAI Rate Schedule Changes</p>
+<ol class="arabic simple">
+<li><p>EAI accrues based on an account’s WAA according to the EAI rate table currently in effect. An account’s WAA is updated on every incoming transfer to it: outgoing transfers and EAI credits do not update the WAA.</p></li>
+<li><p>When an account is locked, the current EAI lock bonus for the specified lock period is recorded as part of the account state. That lock bonus never changes and is always added to the current unlocked base rate, which may change.</p></li>
+<li><p>EAI is accrued by a locked account at the current base rate applicable to its current WAA plus the lock bonus rate recorded when the account was locked.</p></li>
+<li><p>Changes to the unlocked EAI rate tables take effect immediately. All accounts begin accruing EAI at the new rates. Locked accounts continue to have their original EAI bonus amount added to the current unlocked rate.</p></li>
+<li><p>If an account is re-locked its bonus is changed to the then-current rate for the new lock period.</p></li>
+</ol>
+<p>Node Reward Procedure</p>
+<ol class="arabic simple">
+<li><p>An off-chain service (initially operated by ndev) periodically issues NominateNodeReward transactions. The chaos chain identifies the accounts permitted to issue this transaction, and it lists a table of EAI fees to be allocated to system accounts and node rewards.</p></li>
+<li><p>System EAI fees due to all listed recipients are calculated in the NominateNodeReward transaction and credited to the appropriate system accounts. The transaction also calculates the amount available to be claimed in the node reward itself and publishes it in the transaction but does not credit it to that node.</p></li>
+<li><p>The nominated node must respond within a time limit (published on the chaos chain) by issuing a ClaimNodeReward transaction.</p></li>
+<li><p>The ClaimNodeReward transaction must be issued by the nominated node, and it credits the node reward specified in the nomination to it.</p></li>
+<li><p>The NominateNodeReward transaction calculates all fee and reward amounts accrued since the last NominateNodeReward transaction. If the previous node reward was not claimed in time, it is discarded.</p></li>
+</ol>
+</div>
+
+
+          </div>
+<<<<<<< HEAD
+          
+=======
+>>>>>>> master
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<<<<<<< HEAD
+<h1 class="logo"><a href="contents.html">ndau</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="blockchain.html">The ndau blockchain</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">User</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transactions.html">Transactions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">The ndau API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">ndau tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="staking.html">Staking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="localnet.html">Building an ndau localnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nodeoperation.html">Node operation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exchangeintegration.html">Exchange integration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="specifications.html">Specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html">General Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html#definitions">Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html#the-wallet-at-genesis-source">The Wallet at Genesis (source)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html#mvp-wallet-with-example-of-an-imported-private-key-source">MVP wallet with example of an imported private key (source)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ndau_Glossary_and_Usage_Guide.html#stuff-that-shouldnt-be-in-a-glossary">Stuff that shouldn’t be in a glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact info</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="contents.html">Documentation overview</a><ul>
+      <li>Previous: <a href="exchangeintegration.html" title="previous chapter">Exchange integration</a></li>
+      <li>Next: <a href="specifications.html" title="next chapter">Specifications</a></li>
+  </ul></li>
+</ul>
+</div>
+=======
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/sources.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+>>>>>>> master
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+=======
+>>>>>>> master
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<<<<<<< HEAD
+    <div class="footer">
+      &copy;2019, Oneiro NA, Inc..
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/sources.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+=======
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="contents.html">ndau  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Oneiro NA, Inc..
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+>>>>>>> master
+  </body>
+</html>

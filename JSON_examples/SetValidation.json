@@ -1,0 +1,10 @@
+{
+  "target": "ndag7xur8jdsbck9w3r6via2s8h7xyz4bwhm56f7ikmby9jx",
+  "ownership": "npuba8jadtbbeabgw8im2wmwebtapz5c4wb2yk32yqh47c3frseqhm5zz3b6qwi5j7xdb8mcn7pd",
+  "validation_keys": [
+    "npuba8jadtbbebij2qd8vpp9hs29cfrjhxexym824qnjd95gxh2sx7723q4y59ci635j6gt6h4gg"
+  ],
+  "validation_script": "oAC8DgJgPlEJBUDDiA==",
+  "sequence": 824,
+  "signature": "a4jadtcaunxiay8yw55e5unhv2ij9enjwrq89skmrc6a93hw4qebj6t45tfhpc9fugtsfqnsgkfm5g7rk7vpd4n2syf36ipvn4kd26e2uur5j6djj5fjvbcj"
+}
