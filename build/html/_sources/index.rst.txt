@@ -9,7 +9,6 @@ Welcome to ndau
 .. toctree::
    :maxdepth: 3
 
-<<<<<<< HEAD
    introduction
    blockchain
    user
@@ -28,15 +27,3 @@ Welcome to ndau
    
    ndau_Glossary_and_Usage_Guide
    contact
-
-   .. include:: ../ndau/pkg/ndau/transactions.go
-    :code: go
-    :start-line: 44
-    :end-line: 52
-=======
-.. go:package::
-        transactions.go
-        :code: go
-        :start-line: 44
-        :end-line: 52
->>>>>>> master

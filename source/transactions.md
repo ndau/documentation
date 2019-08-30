@@ -57,31 +57,19 @@ Transaction details can be retrieved by specifying the unique hash returned by t
 26 ResolveStake
 30 ChangeSchema
 ```
-<<<<<<< HEAD:source/transactions.md
 
 Mainnet and Testnet
 ===
-The ndau mainnet and testnet are accessible to the public. Each node on each network is identified with a unique numeric ID given as "<N>" here:
-Mainnet: https://mainnet-<N>.ndau.tech:3030
-Testnet: https://testnet-<N>.ndau.tech:3030
-The ndau API is available on all nodes in either network.
-=======
-<<<<<<< Updated upstream:transactions.md
-Each transaction type returns a unique set of information. In the descriptions below, the "msg" fields are the labels used in the returned JSON
-to identify each parameter. The "json" fields are the labels used for each parameter in the JSON input to the
-`/tx/submit` and `/tx/prevalidate` endpoints.
-=======
-
-Mainnet and Testnet
-===
-The ndau mainnet and testnet are accessible to the public. Each node on each network is identified with a unique numeric ID (given as 0 here):
+The ndau mainnet and testnet are accessible to the public. Each node on each network is identified with a unique numeric ID (given as "0" here):
 
 Mainnet: [https://mainnet-0.ndau.tech:3030](https://mainnet-0.ndau.tech:3030) \
 Testnet: [https://testnet-0.ndau.tech:3030](https://testnet-0.ndau.tech:3030)
 
 The ndau API is available on all nodes in either network.
->>>>>>> Stashed changes:source/transactions.md
->>>>>>> master:transactions.md
+
+Each transaction type returns a unique set of information. In the descriptions below, the "msg" fields are the labels used in the returned JSON
+to identify each parameter. The "json" fields are the labels used for each parameter in the JSON input to the
+`/tx/submit` and `/tx/prevalidate` endpoints.
 
 Examples
 ===
