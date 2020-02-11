@@ -1,0 +1,5 @@
+# ignore generated keys and signatures
+keypair.*
+signature.*
+pubkey.*
+privkey.*
