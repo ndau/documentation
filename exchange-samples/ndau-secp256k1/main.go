@@ -21,8 +21,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/oneiro-ndev/ndaumath/pkg/key"
-	"github.com/oneiro-ndev/ndaumath/pkg/signature"
+	"github.com/ndau/ndaumath/pkg/key"
+	"github.com/ndau/ndaumath/pkg/signature"
 )
 
 //	All keys and signatures are read and written in ndau format.
@@ -88,7 +88,7 @@ Data to be signed is read literally with no conversion.
 
 		// privKey.Sign and pubKey.Verify internally hash the message when
 		// using secp256k1, based on recommendations in btcec documentation.
-		// Implementation: https://github.com/oneiro-ndev/ndaumath/blob/93bc4c443f9d0e097ff833750b6aac7c2b02559b/pkg/signature/algorithms/secp256k1/secp256k1.go#L59-L65
+		// Implementation: https://github.com/ndau/ndaumath/blob/93bc4c443f9d0e097ff833750b6aac7c2b02559b/pkg/signature/algorithms/secp256k1/secp256k1.go#L59-L65
 
 		message := []byte(os.Args[3])
 

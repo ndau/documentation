@@ -12,8 +12,8 @@ Examples of how to construct transactions and submit them to the ndau API.  The 
     - `curl`
     - `jq`
 * Build `keytool`:
-    - Clone the [commands](https://github.com/oneiro-ndev/commands) repo
-    - `cd ~/go/src/github.com/oneiro-ndev/commands`
+    - Clone the [commands](https://github.com/ndau/commands) repo
+    - `cd ~/go/src/github.com/ndau/commands`
     - `dep ensure`
     - `go build ./cmd/keytool`
 
@@ -67,7 +67,7 @@ This will choose a random node on testnet for you to use with the following exam
 
 ### Connect to your own node
 
-Optionally, you can follow the steps [here](https://github.com/oneiro-ndev/commands/blob/master/docker/node_operator.md) to run your own node, connected to testnet.  Once your node is running, you know your host and port for the ndau API.  For example, use `HOST=http://localhost:3030` in the following transaction examples if you're running your node locally with the default ndau API port.
+Optionally, you can follow the steps [here](https://github.com/ndau/commands/blob/master/docker/node_operator.md) to run your own node, connected to testnet.  Once your node is running, you know your host and port for the ndau API.  For example, use `HOST=http://localhost:3030` in the following transaction examples if you're running your node locally with the default ndau API port.
 
 ## Child Accounts
 
