@@ -9,21 +9,7 @@ Welcome to ndau
 .. toctree::
    :maxdepth: 3
 
-   introduction
-   blockchain
-   user
-
    transactions
-   api
-   commands-cmd-ndauapi
-   tools
-   staking
-   localnet
-   nodeoperation
-
-   exchangeintegration
-   sources
-   specifications
-   
+   definitions
    ndau_Glossary_and_Usage_Guide
-   contact
+   
