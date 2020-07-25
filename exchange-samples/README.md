@@ -67,7 +67,7 @@ This will choose a random node on testnet for you to use with the following exam
 
 ### Connect to your own node
 
-Optionally, you can follow the steps [here](https://github.com/ndau/commands/blob/master/docker/node_operator.md) to run your own node, connected to testnet.  Once your node is running, you know your host and port for the ndau API.  For example, use `HOST=http://localhost:3030` in the following transaction examples if you're running your node locally with the default ndau API port.
+Optionally, you can follow the steps [here](https://github.com/ndau/commands/blob/master/docker/node_operator.md) to run your own node, connected to testnet.  Once your node is running, you know your host and port for the ndau API.  For example, use `HOST=http://localhost:3030` in the following transaction examples if you're running your node locally with the default ndau API port. For mainnet transactions, you can use `HOST=https://mainnet-1.ndau.tech:3030`
 
 ## Child Accounts
 
@@ -123,8 +123,11 @@ read -d '' TX << EOF
     "sequence": $SEQUENCE
 }
 EOF
-SIGNATURE_1=$(./keytool sign $PRIVATE_VALIDATION_1 "$TX" -t $TXTYPE)
-SIGNATURE_2=$(./keytool sign $PRIVATE_VALIDATION_2 "$TX" -t $TXTYPE)
+# create a b64 encoded string of signable bytes to be signed externally
+SIGNABLE_BYTES=$(echo $TX | ./ndau signable-bytes "$TXTYPE")
+# sign bytes of TX with private validation keys (replace keytool with your signature tool)
+SIGNATURE_1=$(./keytool sign $PRIVATE_VALIDATION_1 "$SIGNABLE_BYTES" -b)
+SIGNATURE_2=$(./keytool sign $PRIVATE_VALIDATION_2 "$SIGNABLE_BYTES" -b)
 SIGNED_TX=$(echo $TX | jq '.signatures=["'$SIGNATURE_1'","'$SIGNATURE_2'"]')
 curl -H "Content-Type: application/json" -d "$SIGNED_TX" $HOST/tx/submit/$TXTYPE
 ```
@@ -147,8 +150,11 @@ read -d '' TX << EOF
     "sequence": $SEQUENCE
 }
 EOF
-SIGNATURE_1=$(./keytool sign $PRIVATE_VALIDATION_1 "$TX" -t $TXTYPE)
-SIGNATURE_2=$(./keytool sign $PRIVATE_VALIDATION_2 "$TX" -t $TXTYPE)
+# create a b64 encoded string of signable bytes to be signed externally
+SIGNABLE_BYTES=$(echo $TX | ./ndau signable-bytes "$TXTYPE")
+# sign bytes of TX with private validation keys (replace keytool with your signature tool)
+SIGNATURE_1=$(./keytool sign $PRIVATE_VALIDATION_1 "$SIGNABLE_BYTES" -b)
+SIGNATURE_2=$(./keytool sign $PRIVATE_VALIDATION_2 "$SIGNABLE_BYTES" -b)
 SIGNED_TX=$(echo $TX | jq '.signatures=["'$SIGNATURE_1'","'$SIGNATURE_2'"]')
 curl -H "Content-Type: application/json" -d "$SIGNED_TX" $HOST/tx/submit/$TXTYPE
 ```
