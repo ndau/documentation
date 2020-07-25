@@ -125,7 +125,7 @@ read -d '' TX << EOF
 EOF
 # create a b64 encoded string of signable bytes to be signed externally
 SIGNABLE_BYTES=$(echo $TX | ./ndau signable-bytes "$TXTYPE")
-# sign bytes of TX with private validation keys (replace keytool with your signature tool)
+# sign bytes of TX with private validation keys
 SIGNATURE_1=$(./keytool sign $PRIVATE_VALIDATION_1 "$SIGNABLE_BYTES" -b)
 SIGNATURE_2=$(./keytool sign $PRIVATE_VALIDATION_2 "$SIGNABLE_BYTES" -b)
 SIGNED_TX=$(echo $TX | jq '.signatures=["'$SIGNATURE_1'","'$SIGNATURE_2'"]')
@@ -152,7 +152,7 @@ read -d '' TX << EOF
 EOF
 # create a b64 encoded string of signable bytes to be signed externally
 SIGNABLE_BYTES=$(echo $TX | ./ndau signable-bytes "$TXTYPE")
-# sign bytes of TX with private validation keys (replace keytool with your signature tool)
+# sign bytes of TX with private validation keys
 SIGNATURE_1=$(./keytool sign $PRIVATE_VALIDATION_1 "$SIGNABLE_BYTES" -b)
 SIGNATURE_2=$(./keytool sign $PRIVATE_VALIDATION_2 "$SIGNABLE_BYTES" -b)
 SIGNED_TX=$(echo $TX | jq '.signatures=["'$SIGNATURE_1'","'$SIGNATURE_2'"]')
