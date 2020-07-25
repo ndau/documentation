@@ -65,9 +65,11 @@ echo HOST=$HOST
 
 This will choose a random node on testnet for you to use with the following examples for submitting transactions to the blockchain.
 
+For mainnet transactions, you can use `HOST=https://mainnet-1.ndau.tech:3030`
+
 ### Connect to your own node
 
-Optionally, you can follow the steps [here](https://github.com/ndau/commands/blob/master/docker/node_operator.md) to run your own node, connected to testnet.  Once your node is running, you know your host and port for the ndau API.  For example, use `HOST=http://localhost:3030` in the following transaction examples if you're running your node locally with the default ndau API port. For mainnet transactions, you can use `HOST=https://mainnet-1.ndau.tech:3030`
+Optionally, you can follow the steps [here](https://github.com/ndau/commands/blob/master/docker/node_operator.md) to run your own node, connected to testnet.  Once your node is running, you know your host and port for the ndau API.  For example, use `HOST=http://localhost:3030` in the following transaction examples if you're running your node locally with the default ndau API port. 
 
 ## Child Accounts
 
